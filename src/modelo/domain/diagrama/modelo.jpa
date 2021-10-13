@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="prueba" epkg="domain" v="5.2" rws="_155026487817232" Pws="_155026487817232" cws="_155026487817232" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_155026487817231" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:mapped-superclass compositePrimaryKeyClass="PersonaPK" abs="false" class="Persona" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951448153">
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="nombre" jbt="false" id="_1550264951448154">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="apellido" jbt="false" id="_1550264951448155">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="telefono" jbt="false" id="_1550264951448156">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="email" jbt="false" id="_1550264951448157">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fnac" jbt="false" id="_1550264951464158">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:mapped-superclass>
+    <jpa:entity compositePrimaryKeyClass="ReservaPK" abs="false" class="Reserva" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951292121">
+        <jpa:removedAttributes>
+            <jpa:i>asiento</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="fila" pname="attribute" id="_155294637914430">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="columna" pname="attribute1" id="_155294638542431">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="precio" pname="attribute2" id="_155294638759532">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1550264951354126" connected-attribute-id="_1550264951370134" v="true" xvt="" am="PRIVATE" name="vuelo" jbt="false" id="_1550264951339124">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1550264951417143" connected-attribute-id="_1550264951432147" v="true" xvt="" am="PRIVATE" name="pasajero" jbt="false" id="_1550264951339125">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idReserva" jbt="false" id="_1550264951292122">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Reserva.findByFila">
+            <jpa:query>Select r from Reserva r where r.fila=:fila</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reserva.findByColumna">
+            <jpa:query>Select r from Reserva r where r.columna=:columna</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Reserva.findByPrecio">
+            <jpa:query>Select r from Reserva r where r.precio=:precio</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="VueloPK" abs="false" class="Vuelo" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951354126">
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="origen" jbt="false" id="_1550264951354128">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="destino" jbt="false" id="_1550264951354129">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaSalida" jbt="false" id="_1550264951354130">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" xvt="" am="PRIVATE" name="fechaArribo" jbt="false" id="_1550264951370131">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" am="PRIVATE" name="distancia" jbt="false" id="_1550264951370132">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1550264951401136" connected-attribute-id="_1550264951401141" v="true" xvt="" am="PRIVATE" name="aeronave" jbt="false" id="_1550264951370133">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade/>
+            </jpa:many-to-one>
+            <jpa:one-to-many orp="true" own="false" collection-type="java.util.List" connected-entity-id="_1550264951292121" connected-attribute-id="_1550264951339124" v="true" xvt="" am="PRIVATE" name="reservas" jbt="false" id="_1550264951370134">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1550264951464166" connected-attribute-id="_1550264951479169" v="true" xvt="" am="PRIVATE" name="tripulantes" jbt="false" id="_1550264951385135">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-persist/>
+                    <jpa:cascade-merge/>
+                </jpa:cascade>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idVuelo" jbt="false" id="_1550264951354127">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="AeronavePK" abs="false" class="Aeronave" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951401136">
+        <jpa:removedAttributes>
+            <jpa:i>asientoes</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="fabricante" jbt="false" id="_1550264951401138">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="modelo" jbt="false" id="_1550264951401139">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1550264951495170" connected-attribute-id="_1550264951495173" v="true" xvt="" am="PRIVATE" name="tipoAeronave" jbt="false" id="_1550264951401140">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade/>
+            </jpa:many-to-one>
+            <jpa:one-to-many orp="true" own="false" collection-type="java.util.List" connected-entity-id="_1550264951354126" connected-attribute-id="_1550264951370133" v="true" xvt="" am="PRIVATE" name="vueloes" jbt="false" id="_1550264951401141">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idAeronave" jbt="false" id="_1550264951401137">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PasajeroPK" abs="false" class="Pasajero" superclassId="_1550264951448153" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951417143">
+        <jpa:removedAttributes>
+            <jpa:i>comida</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="boolean" v="true" xvt="" am="PRIVATE" name="viajeroFrecuente" jbt="false" id="_1550264951432145">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="comida" pname="attribute" id="_155294750715533"/>
+            <jpa:one-to-many orp="true" own="false" collection-type="java.util.List" connected-entity-id="_1550264951292121" connected-attribute-id="_1550264951339125" v="true" xvt="" am="PRIVATE" name="reservas" jbt="false" id="_1550264951432147">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idPasajero" jbt="false" id="_1550264951417144">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pasajero.findByComida">
+            <jpa:query>Select p from Pasajero p where p.comida=:comida</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TripulantePK" abs="false" class="Tripulante" superclassId="_1550264951448153" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951464166">
+        <jpa:attributes>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1550264951495170" connected-attribute-id="_1550264951510174" v="true" xvt="" am="PRIVATE" name="tipoAeronaves" jbt="false" id="_1550264951464168">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-persist/>
+                    <jpa:cascade-merge/>
+                </jpa:cascade>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1550264951354126" connected-attribute-id="_1550264951385135" v="true" xvt="" am="PRIVATE" name="vueloes" jbt="false" id="_1550264951479169">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-persist/>
+                    <jpa:cascade-merge/>
+                </jpa:cascade>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idTripulante" jbt="false" id="_1550264951464167">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TipoAeronavePK" abs="false" class="TipoAeronave" v="true" jbn="false" xre="false" m="false" rootElement="_155026487817231" id="_1550264951495170">
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PRIVATE" name="descripcion" jbt="false" id="_1550264951495172">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="true" own="false" collection-type="java.util.List" connected-entity-id="_1550264951401136" connected-attribute-id="_1550264951401140" v="true" xvt="" am="PRIVATE" name="aeronaves" jbt="false" id="_1550264951495173">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1550264951464166" connected-attribute-id="_1550264951464168" v="true" xvt="" am="PRIVATE" name="tripulantes" jbt="false" id="_1550264951510174">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-persist/>
+                    <jpa:cascade-merge/>
+                </jpa:cascade>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PRIVATE" name="idTipoAeronave" jbt="false" id="_1550264951495171">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_155026487817232">
+            <i ref="_1550264951417143" x="253" y="59"/>
+            <i ref="_1550264951448153" x="525" y="8"/>
+            <i ref="_1550264951354126" x="259" y="321"/>
+            <i ref="_1550264951464166" x="861" y="123"/>
+            <i ref="_1550264951292121" x="11" y="182"/>
+            <i ref="_1550264951401136" x="571" y="363"/>
+            <i ref="_1550264951495170" x="829" y="384"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
